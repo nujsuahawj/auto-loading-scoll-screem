@@ -7,13 +7,13 @@ use Livewire\Component;
 
 class LoadMoreUserList extends Component
 {
-    public $perPage = 6;
+    public $perPage = 25;
     protected $listeners = [
         // 'load-more' => 'loadMore'
     ];
     public function loadMore()
     {
-        $this->perPage = $this->perPage + 5;
+        $this->perPage = $this->perPage + 10;
     }
 
     public function render()

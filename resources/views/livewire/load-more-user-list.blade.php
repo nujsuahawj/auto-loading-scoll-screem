@@ -21,10 +21,19 @@
     </div>
 </div>
 <script type="text/javascript">
+
+    let loading = false;
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             // code to call Livewire method
-            @this.call('loadMore');
+            //@this.call('loadMore');
+            if (!loading) {
+                loading = true; // Set loading flag to true to prevent multiple requests
+                @this.call('loadMore').then(function() {
+                    // Callback function to reset loading flag after data is loaded
+                    loading = false;
+                });
+            }
         }
     };
 </script>
