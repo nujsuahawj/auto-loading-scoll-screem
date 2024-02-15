@@ -8,12 +8,10 @@ use Livewire\Component;
 class LoadMoreUserList extends Component
 {
     public $perPage = 25;
-    protected $listeners = [
-        // 'load-more' => 'loadMore'
-    ];
     public function loadMore()
     {
-        $this->perPage = $this->perPage + 10;
+        // $this->perPage = $this->perPage + 10;
+        $this->perPage += 10;
     }
 
     public function render()
